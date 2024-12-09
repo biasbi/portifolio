@@ -1,187 +1,174 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Dance and BTS</title>
-    <link rel="stylesheet" href="/assets/favicon.png.png">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>mobile_firt_Portifolio</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/styles_mq.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+        <!-- Na sequencia de acima para baixo: colocado como favicon; 
+         link para o css do menu mobile; link para o css do google fonts -->
+
 </head>
-<body>
+
+<!-- Criado uma função para quando o tamanho da tela for menor que 768px,
+  o menu mobile será ativado -->
+
+<body onresize="mudouTamanho()">
     <header>
-        <h1>Dance and BTS</h1>
-       </header>
+        <h1>The Mobile Firt - Menu</h1>
+    </header>
+    <!-- Usando o google icons o menu é criado, junto com uma função usado no
+      javascript para exibir o menu burger no evento de onclik-->
+    <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">
+        menu
+    </span>
+    <!-- Todos os links do menu pertence ao um conteiner com uma lista não numerada
+     e um id para ser usado no Medias Queries-->
+
+    <menu id="itens">
+        <ul>
+            <li><a href="#">mobile</a></li>
+            <li><a href="#"> tablet</a></li>
+            <li><a href="#">smart_tv</a></li>
+            <li><a href="#">desktop</a></li>
+        </ul>
+    </menu>
+
+    <!-- Todas as imagens são oculta pelo atributo none, e a cada mudança de resolução
+      de tela será exibido somente as imagens que pertence a cada tela-->
+    <main>
+        <img src="/assets/icon-phone.png" alt="teste com celular" id="mobile">
+
+        <img src="/assets/icon-tablet.png" alt="teste com celular" id="tablet">
+
+        <img src="/assets/icon-print.png" alt="versão impressora" id="print">
+
+        <img src="/assets/icon-pc.png" alt="teste com desktop" id="pc">
+
+        <img src="/assets/icon-tv.png" alt="teste com smart tv" id="tv">
+
+        <!-- Dentro  do main foi criado um div com um id para ser usado no Medias Queries
+         e dentro dele foi criado um div com um id para ser usado no Medias Queries
+         onde a estrutura article será redimencionada para cada visualização de tela-->
+
+        <article>
+            <h2>Testando Media Queries</h2>
+            <p>
+               <h3>Media queries</h3> 
+                São uma técnica do CSS3 usada para aplicar estilos diferentes a um documento,
+                dependendo das características do dispositivo em que ele está sendo exibido,
+                como a largura da tela,a altura,a resolução,e orientação(retrato ou paisagem),entre outras.
+                Eles são essenciais para criar designs responsivos que se ajustam a diferentes tamanhos de tela,
+                garantindo uma experiência de usuário consistente em dispositivos móveis,tablets e desktops.
+            </p>
+             
+            <p>
+                <h4>Exemplo Básico</h4>
+                Aqui está um exemplo básico de como usar media queries 
+                para ajustar o layout de uma página com base na largura da tela:
+
+                <h5>/* Estilos padrão para todos os dispositivos */</h5>
+
+<h6>body {
+  background-color: lightgrey;
+  font-size: 16px;
+}
+</h6>
+<h6>/* Estilos para dispositivos com largura de tela de até 600px */
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+    font-size: 12px;
+  }
+}
+</h6>
+<h6>/* Estilos para dispositivos com largura de tela entre 600px e 1200px */
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  body {
+    background-color: lightgreen;
+    font-size: 14px;
+  }
+}
+</h6>
+<h6>/* Estilos para dispositivos com largura de tela superior a 1200px */
+@media only screen and (min-width: 1201px) {
+  body {
+    background-color: lightcoral;
+    font-size: 18px;
+  }
+}
+</h6>
+</article>
+            </p>
+<article1>
+            <p>
+                <p1>Como Funcionam</p>
+                <p>@media only screen and (max-width: 600px):
+                Aplica estilos se a largura da tela for de até 600 pixels.</p>
+
+                <p>@media only screen and (min-width: 601px) and (max-width: 1200px):
+                Aplica estilos se a largura da tela for entre 601 e 1200 pixels.</p>
+                
+                
+                <p>@media only screen and (min-width: 1201px):
+                Aplica estilos se a largura da tela for superior a 1200 pixels.</p>
+               </p> 
+                    
+            <p>
+                <p>Utilidades de Media Queries</p>
+Responsividade:Ajustar o layout para diferentes tamanhos de tela,
+como smartphones, tablets, e desktops.
+Acessibilidade:Melhorar a usabilidade e experiência do usuário em dispositivos 
+com diferentes capacidades e recursos.
+Design Adaptativo: Aplicar estilos específicos para dispositivos com 
+características únicas, como alta resolução ou modos de tela (paisagem/retrato).
+Media queries são uma ferramenta poderosa para garantir que seu 
+site seja acessível e funcional em uma ampla gama de dispositivos.
+            </p>
+</article>
+        
+
+    </main>
+
+    <footer>
+        <p>
+            @b1a.startruck - Mobile First - 2024
+        </p>
+    </footer>
+    <!--  -->
+    <script>
+        /*
+        verifica se o tamanho da tela mudou para menor de 768px para assim aplicar o estilo
+        deixando assim o menu estatico oculto e bloqueado para visualizar
+        */
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                //itens.style.display = 'inline-block'
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+        //exibir o menu burger em tela menor
+        /*
+        Ao clicar no menu, bloqueado (block) caso esteja deve ser exibido (none) e vice versa
+        mas deixando assim oculto o menu com o "id=burger"
+        */
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+
 </body>
 
-<nav>
-    <article>
-        <img src="/assets/dance.png.jpeg" alt="dance" width="600" height="600"></a>
-        <img src="/assets/dance1.png.jpeg" alt="dance1"width="600" height="600"></a>
-     <p>
-       <h2>A história das danças de K-pop é fascinante e reflete a evolução cultural da Coreia do Sul.</h1>  
-     </p>
-     <p>
-        Se você está conectado às redes sociais e adora ver videoclipes ou vídeos de coreografias certamente já conhece o K-Pop.
-        O estilo musical e dançante da Coreia do Sul vem dominando o mundo nos últimos anos e virou febre principalmente entre o público mais novo.
-        Hoje, a coluna Dança fará uma viagem especial até as terras orientais para conhecer um pouco mais da modalidade tipicamente coreana de música e dança.
-        A ideia é falarmos da origem, das características e de algumas curiosidades do onipresente e do moderníssimo K-Pop. Vamos juntos nessa jornada?
-        Se esse ritmo ainda não tiver conquistado seu coraçãozinho (seus ouvidos e suas perninhas),
-        quem sabe até o final desse post do Bonas Histórias você não terá se tornado mais um(a) K-Popper, hein? Esse é o termo utilizado para se referir aos fãs do gênero,que crescem a cada dia em velocidade absurda. 
-O K-Pop é a sigla de Korean Pop, estilo pop da Coreia. Esse ritmo musical-dançante surgiu na Coreia do Sul na década de 1990.
-Naquela época, o continente asiático atravessava grave crise financeira e o governo de Seul resolveu investir pesado na sua indústria cultural.
-A proposta era impulsionar o turismo e, principalmente, aquecer a produção artístico-cultural do país. A meta era tornar a cultura sul-coreana um novo item de exportação.
-Seguindo a linha do soft power, o mundo precisava conhecer e admirar a cultura coreana. Pelo menos esse era o pensamento das autoridades políticas da Coreia do Sul.
-Esse movimento ficou conhecido como Hallyu, a Onda Coreana, e envolveu várias áreas culturais e artísticas da nação como música,cinema,gastronomia,televisão,literatura,língua e moda.
-É interessante notar que há países por aí que investem sem medo na indústria cultural e colhem os frutos do trabalho bem-feito.Enquanto outros....
-O investimento da Coreia do Sul no setor artístico foi grande nas últimas três décadas,mas o resultado colhido nos últimos anos foi muuuuito maior.
-Houve um aumento considerável de turistas no país, por exemplo.As novelas coreanas,chamadas de K-Dramas,Korean Dramas ou doramas,se popularizaram,receberam investimentos altíssimos da Netflix e são sucessos de audiência nos quatro cantos da Terra.
-Em fevereiro de 2020, “Parasita” (Gisaengchung: 2019), filme de Bong Joon Ho, conquistou quatro estatuetas do Oscar. Além de vencer nas categorias de melhor filme internacional,melhor roteiro original e melhor direção,o longa-metragem sul-coreano 
-surpreendeu ao papar o prêmio principal da indústria norte-americana de cinema como melhor filme daquela temporada.
-Foi a primeira vez na história que uma produção de fora dos Estados Unidos superou os títulos hollywoodianos. Em agosto de 2020, a banda BTS bateu um recorde musical de longa data.
-Em um mercado fonográfico dominado por artistas de língua inglesa, os meninos sul-coreanos se tornaram o primeiro grupo musical desde os Beatles a ter três álbuns no topo da Billboard em menos de um ano.
-Portanto,não é errado pensarmos que,nesse momento,o planeta está vendo,ouvindo e dançando ao ritmo coreano. 
-</p>
-<p>
-    O primeiro grupo a se destacar no K-Pop foi o Seo Taiji and Boys.Em 1992, o trio de adolescentes formado por Seo Taiji,Yang Hyun-suk e Lee Juno fez uma memorável apresentação na televisão local.
-    O sucesso da jovem banda foi imediato. A partir daí, eles ganharam mais e mais popularidade e, como consequência, influenciaram o surgimento de grupos semelhantes que estavam ávidos para surfar naquela promissora onda.
-    Estava plantada a semente do K-Pop que germinaria rapidamente na Coreia no final do século XX, mas que demoraria ainda alguns anos para ultrapassar as fronteiras da península.
-    O primeiro mercado externo que foi conquistado pelo som do K-Pop foi, obviamente, o asiático nos primeiros anos do século XXI.Só na década passada o restante do mundo passou a olhar e a curti-lo com mais força.
-    Atualmente,esse gênero musical tão marcante movimenta muito dinheiro, sendo uma relevante fonte de renda da Coreia do Sul. 
-Agora vamos conhecer melhor quais são as características do K-Pop e,quem sabe assim,entender por que ele faz tanto sucesso.A melhor definição que penso para esse ritmo seria de um gênero que mistura vários estilos musicais.
-Se fosse Oswald de Andrade que estivesse escrevendo esse post da coluna Dança, na certa ele diria que o K-Pop é um movimento antropofágico da música sul-coreana moderna.
-Se fosse um(a) astrônomo(a) que produzisse esse texto para o Bonas Histórias,na certa ele(ela) diria que essa modalidade é como um buraco negro, que absorve todas as referências culturais que estão ao seu redor. Contudo, como sou eu mesma quem está tecendo essas linhas,digo que o K-Pop apropria-se de grande parte dos elementos audiovisuais da cultura Pop.
-Ele usa a linguagem dos videoclipes, os efeitos luminosos das placas publicitárias, os sons caóticos das grandes cidades, os figurinos extravagantes dos estilistas mais descolados e as coreografias ousadas dos dançarinos contemporâneos.Não à toa,esse conjunto estético e estilístico prende a atenção de quem ouve e de quem assiste às bandas do K-Pop. 
-É importante também dizer que esse estilo inovou na forma de se fazer música.A partir da mescla de ritmos como Pop,Hip Hop,Jazz,Rock e Música Eletrônica,o K-Pop deu origem a um tipo de som diferenciado e,
-ao mesmo tempo, cativante. A dança também tem um papel importante no contexto geral das apresentações das bandas sul-coreanas.Afinal,ninguém consegue cantar ou ouvir esse gênero parado. Os cantores (e a plateia) costumam entoar as canções dançando de maneira sincronizada.
-Por isso,é muito difícil pensar no K-Pop sem concebê-lo como sendo a união natural e harmônica de música e dança.
-</p>
-
-<p>
-    Assim como nas composições musicais, a dança do K-Pop também mistura passos e expressões corporais de outras modalidades. Ao batermos os olhos em suas coreografias, reconhecemos imediatamente a influência do Hip Hop e do Jazz,por exemplo.
-    Porém,o que chama mais a atenção é a energia contagiante e a animação dessa modalidade.As coreografias do K-Pop são marcantes, sincronizadas e universais.Cada música tem uma coreografia própria que é repetida fielmente mundo à fora conforme foi apresentada pela banda que a executa.  
-Mas,então,por que será que essa mistura de estilos dançantes deu tão certo e prende tanto a atenção de quem assiste?!As coreografias são elaboradas visando a apresentação em shows.E não é só isso.
-Todos os dançarinos têm que ter o mesmo destaque No K-Pop,não há enfoque em ninguém nem destaque individuais para um ou outro artista(algo bem típico da cultura oriental).
-Para que isso ocorra na prática, a sequência de passos é pensada para ser o mais dinâmica possível,com todos os integrantes da banda se movimentando constante e freneticamente no palco.
-Se você tentar acompanhar apenas um dançarino, seu olhar não vai conseguir ficar parado. As movimentadas coreografias trabalham toda a possibilidade de dimensão que o corpo pode ocupar no espaço.
-E sem perceber, quem estiver assistindo à apresentação acaba dançando junto com o olhar que vai se mexendo por todo o palco junto com os músicos/dançarinos. 
-A dança do K-Pop, como já adiantei, foi fortemente influenciada por outras modalidades.Ela apresenta movimentos conhecidos do Street Dance,Pop,Stiletto,Eletrônico e Hip Hop,mas traz uma abordagem estilística e sequências de passos diferentes.
-Dessa combinação de estilos,com sequências dinâmicas e inovadoras,surgiu a dança do K-Pop.
-Sua característica mais marcante,você vai perceber logo de cara, é a divisão de movimentos dos membros inferiores e superiores. Os passos exigem muita coordenação motora.Os movimentos de tronco,braços e pernas são bem dissociados.
-E,dessa maneira,nenhuma parte do corpo do dançarino consegue ficar parada (o que caracteriza também um excelente exercício aeróbico).O K-Pop exige movimentos bem precisos,pois há vários detalhes que precisam ser considerados pelos dançarinos.
-Muitas vezes,um único movimento,por exemplo o mexer de um dedo da mão,já faz toda a diferença para a coreografia e para o efeito que se deseja dar.
-E claro,toda essa complexidade é pensada para acompanhar as batidas e o conteúdo das letras das músicas. 
-</p>
-
-<img src="/assets/bts.png.jpeg" alt="bts" width="600" height="600">
-<img src="/assets/os7.png.jpeg" alt="lifegoeson" width="600" height="600">
-
-</article>
-
-<article1>
-<p1>
-    <h1>BTS: conheça a história.</h1>
-O BTS, também conhecido como Bangtan Boys, ou Bangtan Sonyeondan em coreano, é um grupo sul-coreano formado em 2013.
-Ele realizou a sua estreia oficial em 13 de junho daquele ano com o single “No More Dream”, que é a segunda faixa do álbum 2 Cool 4 Skool.
-Todas as conquistas do grupo ao longo dos anos fez com que eles levassem o primeiro lugar na lista Forbes Korea Power Celebrity em 2018, que classifica as celebridades mais poderosas e influentes da Coreia do Sul.
-Segundo a revista Rolling Stones, na Coreia do Sul, as estrelas do pop não costumam se envolver em assuntos políticos, com exceção de algumas estrelas do hip-hop.
-O BTS, por sua vez, conseguiu uma história de sucesso recorde em parte por conta da sua disposição de fazer diferente e entrar em temas “espinhosos” que a maioria das estrelas escolheu por não abordar.
-Desde a sua estreia, os sete membros do grupo se dispuseram a defender abertamente os direitos das pessoas LGBTQIA+, discutir a saúde mental e a pressão para o sucesso – todos assuntos tabu na Coreia do Sul.
-A postura deles é particularmente ousada para o país, dada a história do governo coreano de ficar de olho em temas controversos na música pop do país.
-Ao desafiar essas convenções sociais e escrever letras mais críticas, o BTS ofereceu uma mudança refrescante para o K-pop de maneira geral.
-Isso foi muito importante também para manter o engajamento dos fãs, que são parte muito importante dessa história de sucesso e que vamos ver mais aprofundadamente mais pra frente neste texto.
-Lembra que eu disse que eu disse que o sucesso do grupo se deve em parte a esse fator?
-Então, é que os garotos de Seul também se destacam muito por conta do seu talento para cantar e dançar coreografias ousadas e difíceis.
-É muito talento concentrado em um grupo só. As influências do hip-hop e do R&B ajudaram a criar um som único que cativou corações e mentes primeiro na Coreia e depois no mundo.
-</p>
-
-<p1>
-    <h1>Sucesso internacional</h1>
-O sucesso internacional do grupo começou por volta de 2015, quando lançou o single intitulado “I Need U”, que quebrou vários recordes e ganhou uma série de prêmios.
-O single faz parte do EP The Most Beautiful Moment in Life Pt. 1, que ajudou o grupo a ganhar um público gigante que começou a crescer ao redor do mundo.
-A partir desse lançamento, tudo que o grupo lançava era sucesso comercial mundialmente. O sucesso foi tanto que o grupo começou a ser comparado com os Beatles.
-Por onde quer que o grupo passasse, causavam tumultos e atraiam multidões. E isso em praticamente todos os continentes do planeta.
-</p>
-
-<p1>
-    <h1>A influência dos fandoms</h1>
-É inegável que boa parte do sucesso do BTS hoje se deve por conta do fandom, conhecido como Armys. 
-Os grupos de fãs de BTS são muito ativos na internet (e eu sei bem disso, já que eles vivem interagindo comigo no Twitter e Instagram) e, assim como o grupo, também são bem ativos politicamente tanto online quanto offline.
-Hoje, se você é usuário de redes sociais, é praticamente impossível não se deparar de vez em quando com fancams do grupo e perfis de fãs com a foto de um dos integrantes.
-</p>
-
-<p1>
-    <h1>Conheça os membros
-        Os membros do BTS têm uma idade variada.</h1>
-<p1>RM–(12 de Setembro de 1994)
-RM, ou Kim Nam-joon,é o líder e o rapper do grupo.É conhecido por conta da sua participação ativa nas composições e produções do BTS.
-Mas antes mesmo de integrar o grupo,ele iniciou a sua carreira como rapper independente sob o nome de Runch Randa,em 2007,quando ainda estava na escola.
-RM foi o primeiro integrante a se juntar ao grupo Big Hit Entertainment(a empresa responsável pelo BTS),ainda em 2010.
-Uma curiosidade sobre ele é que aprendeu inglês sozinho,de forma autodidata,assistindo a série americana Friends.</p>
-
-<p1>Jin–(4 de Dezembro de 1992)
-Jin, ou Kim Seok-jin, tem uma história curiosa. Aos 15 anos, um olheiro da SM Entertainment(uma concorrente da Big Hit)fez uma proposta de audição para o jovem Jin.
-Entretanto, ele achou que tudo não passava de uma brincadeira e acabou recusando a oferta.
-O tempo passou e ele começou a estudar atuação. Na época, ele queria se tornar um ator.Algum tempo depois,em 2012,um agente da Big Hit o abordou e,no mesmo ano,ele passou a fazer parte da empresa.
-Um ponto muito forte de Jin é a sua voz, que já foi até elogiada por outros músicos.Além disso, ele também compõe e toca guitarra.</p>
-
-<p1>SUGA–(9 de Março de 1993)SUGA, ou Min Yoon-Gi,assim como RM,também já se aventurava na música muito antes de fazer parte da formação do BTS.
-Aos 17 anos,ele já fazia parte de um grupo de rap na sua cidade natal, Daegu. O grupo, chamado D-Town,fez com que ele conquistasse certa popularidade no meio musical sul-coreano.
-Em 2010,ele fez uma audição para a Big Hit Entertainment e foi aceito na agência como compositor. 
-Em 2013,quando escalaram ele para fazer parte do BTS,ele já teve o seu primeiro solo/rap no grupo já no primeiro lançamento do grupo,o 2 Cool 4 Skool.</p>
-
-<p1>J-Hope–(18 de Fevereiro de 1994)J-Hope,ou Jung Ho-seok, nasceu em Gwangju,onde já se destacava muito no underground por conta das suas habilidades na dança.
-Ele já ganhou diversas competições e isso não é por acaso. Ele diz que passa horas e até mesmo madrugadas treinando e aprendendo novas coreografias.
-Por isso,ele é considerado o melhor dançarino do grupo,até mesmo pelos próprios colegas.É super brincalhão e extrovertido,como fica bem claro nas entrevistas.
-Apesar disso,ele também é bem sensível e costuma se emocionar bastante em premiações e homenagens.É um fofo!
-    </p>
-
-<p1>Jimin–(13 de Outubro de 1995)
-    Park Ji-min, ou simplesmente Jimin, é um aficionado pela dança. Ele começou a desenvolver suas habilidades de executar coreografias impressionantes muito antes de sequer pensar em se tornar um idol.
-Durante o seu tempo na escola,ele já fazia parte de alguns grupos de dançarinos de rua e participava de competições na sua cidade natal, Busan.
-Logo depois ele conseguiu uma vaga na Busan High School of Arts, onde começou a praticar dança moderna e desenvolver ainda mais suas habilidades.
-Em 2011, ele fez a sua audição para a Big Hit Entertainment e foi aceito como trainee da empresa logo na sua primeira apresentação.
-Ele é muito fã do grupo de K-pop Big Bang e do artista sul-coreano Rain, que, segundo ele, é uma das suas maiores inspirações e uma das razões para escolher virar cantor e dançarino.
-</p>
-
-<p1>V–(30 de Dezembro de 1995)
-V,ou Kim Tae-hyung,assim como Jungkook,foi descoberto por olheiros da Big Hit Entertainment.
-Seus pais não deixavam que ele participasse de audições,mas depois de muita conversa acabaram liberando o jovem rapaz.
-Em 2011, ele passou a fazer parte da Big Hit e é o único integrante que ainda não tinha sido revelado até a estréia do grupo,em 2013.
-Apesar disso,já no dia de estreia do grupo,ele já tinha o maior fã-clube de todos os sete.
-V é considerado pelas Armys um dos melhores vocalistas do BTS e possui uma personalidade bem brincalhona.
-Outra curiosidade interessante sobre o cantor é que ele também é ator,sendo que ele já conseguiu o papel principal na série coreana Hwarang:The Begining,de 2016. 
-</p>
-
-<p1>Jungkook–(1 de Setembro de 1997)
-Jungkook,ou Jeon Jung-kook,nasceu em Busan e a sua carreira na música começou quando ele participou de uma audição para um programa de televisão muito popular na Coreia do Sul,o Superstar K2,uma espécie de The Voice do país.
-Ele tinha apenas 13 anos na época e,apesar de ter sido eliminado,chamou a atenção de diversas agências musicais do país,dentre elas a Big Hit.
-O principal fator que fez ele escolher a Big Hit ao invés das outras empresas é que,em uma reunião da empresa,ele ficou sabendo que RM seria seu companheiro de grupo. 
-Jungkook gostou tanto do som do colega que acabou decidindo ir para a Big Hit.Uma escolha mais do que acertada,não é mesmo?
-</p>
-
-</p>
-
-
-</article>
-
-</nav>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
